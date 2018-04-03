@@ -2,7 +2,7 @@
 
 The most common Data Structures. Very basic implementations and may contain errors. Most Data Structures are implemented in C or C++. Other language options may be available. Primary focus will be to cover any data structure in as much detail as possible.
 
-Following is the list of Data Structures covered so far: 
+## Table of Contents
 1. [Linked List](https://shaphil.github.io/DataStructures/content/linked_list)
 
 ## Raising Issues
