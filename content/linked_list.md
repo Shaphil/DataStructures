@@ -4,7 +4,7 @@ As the name suggests it's a linked data structure. What it means is that data in
 
 ## Video Presentation
 You can watch this video from HackerRank. Author Gayle McDowell explains a bit and then demonstrates an implementation in Java.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/njTh_OwMljA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/njTh_OwMljA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Basic Data member
 The basic data member in a linked list is called a node. Each node contains some data and a pointer for pointing to the next node.
