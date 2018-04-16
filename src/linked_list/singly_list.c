@@ -57,6 +57,36 @@ Node* prepend(Node *head, int data)
     return head;
 }
 
+Node* insert(Node *head, int data, int position)
+{
+    int len = length(head);
+
+    if (position < len) {
+        len = 0;
+        Node *current = head;
+
+        while (len < position) {
+            current = current->next;
+            len++;
+        }
+
+        Node *node = init(data);
+        node->next = current->next;
+        current->next = node;
+    }
+    return head;
+}
+
+int length(Node *head)
+{
+    int len = 0;
+    while (head) {
+        head = head->next;
+        len++;
+    }
+    return len;
+}
+
 void print(Node *head)
 {
     Node *current = head;
@@ -97,8 +127,13 @@ int main()
     for (int i = 0; i < 10; i++)
         head = append(head, i + 1);
 
+    printf("length: %d\n", length(head));
     print(head);
+
+    head = insert(head, 2147483647, 5);
+    printf("length: %d\n", length(head));
     print_reverse(head);
+
     head = free_head(head);
 
     for (int i = 0; i < 10; i++)
