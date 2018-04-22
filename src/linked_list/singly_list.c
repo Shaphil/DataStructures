@@ -17,6 +17,7 @@ Node* reverse(Node *head);
 Node* remove_first(Node *head);
 Node* remove_last(Node *head);
 Node* remove_from(Node *head, int position);
+int find(Node *head, int value);
 int length(Node *head);
 void print(Node *head);
 void print_reverse(Node *head);
@@ -38,6 +39,8 @@ void update_test(Node *head);
 void remove_first_test(Node *head);
 void remove_last_test(Node *head);
 void remove_from_test(Node *head);
+void find_test(Node *head);
+void find_helper(Node *head, int value);
 
 
 // TODO: Break this into smaller files.
@@ -54,6 +57,7 @@ int main()
     remove_first_test(head);
     remove_last_test(head);
     remove_from_test(head);
+    find_test(head);
 
     return 0;
 }
@@ -202,6 +206,24 @@ void remove_from_test(Node *head)
         print(head);
     }
     hr();
+}
+
+void find_test(Node *head)
+{
+    _log("Find");
+
+    head = append_n_nodes_and_print(head, 10, 0);
+    find_helper(head, 20);
+    find_helper(head, 10);
+    hr();
+}
+
+void find_helper(Node *head, int value)
+{
+    if (find(head, value))
+        printf("%d found\n", value);
+    else
+        printf("%d not found\n", value);
 }
 
 // End Tests
@@ -373,6 +395,23 @@ Node* remove_from(Node *head, int position)
         current->next = current->next->next;
     }
     return head;
+}
+
+// find(head, value)
+//      stops at the first match of value in head and returns 1
+//      return 0 if value is not found
+int find(Node *head, int value)
+{
+    if (head) {
+        Node *current = head;
+        while (current) {
+            // found
+            if (current->data == value)
+                return 1;
+            current = current->next;
+        }
+    }
+    return 0;
 }
 
 void print(Node *head)
