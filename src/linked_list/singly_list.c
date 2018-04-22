@@ -17,6 +17,7 @@ Node* reverse(Node *head);
 Node* remove_first(Node *head);
 Node* remove_last(Node *head);
 Node* remove_from(Node *head, int position);
+Node* merge(Node *first, Node *second);
 int find(Node *head, int value);
 int length(Node *head);
 void print(Node *head);
@@ -41,6 +42,7 @@ void remove_last_test(Node *head);
 void remove_from_test(Node *head);
 void find_test(Node *head);
 void find_helper(Node *head, int value);
+void merge_test();
 
 
 // TODO: Break this into smaller files.
@@ -58,6 +60,7 @@ int main()
     remove_last_test(head);
     remove_from_test(head);
     find_test(head);
+    merge_test();
 
     return 0;
 }
@@ -224,6 +227,43 @@ void find_helper(Node *head, int value)
         printf("%d found\n", value);
     else
         printf("%d not found\n", value);
+}
+
+void merge_test()
+{
+    _log("Merge");
+
+    Node *first, *second, *merged;
+    first = second = NULL;
+
+    merged = merge(first, second);
+    print_list(first, "First", 0);
+    print_list(second, "Second", 0);
+    print_list(merged, "Merged", 1);
+    hr();
+
+    second = append_n_nodes(second, 5);
+    print_list(first, "First", 0);
+    print_list(second, "Second", 0);
+    merged = merge(first, second);
+    print_list(merged, "Merged", 1);
+    hr();
+
+    second = NULL;
+    first = append_n_nodes(first, 2);
+    print_list(first, "First", 0);
+    print_list(second, "Second", 0);
+    merged = merge(first, second);
+    print_list(merged, "Merged", 1);
+    hr();
+
+    second = append_n_nodes(second, 7);
+    print_list(first, "First", 0);
+    print_list(second, "Second", 0);
+    merged = merge(first, second);
+    print_list(merged, "Merged", 1);
+
+    hr();
 }
 
 // End Tests
@@ -395,6 +435,24 @@ Node* remove_from(Node *head, int position)
         current->next = current->next->next;
     }
     return head;
+}
+
+Node* merge(Node *first, Node *second)
+{
+    if (!first && !second)
+        return NULL;
+    else if (!first)
+        return second;
+    else if (!second)
+        return first;
+    else {
+        Node *linker = first;
+        while (linker->next)
+            linker = linker->next;
+
+        linker->next = second;
+        return first;
+    }
 }
 
 // find(head, value)
