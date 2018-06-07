@@ -23,6 +23,8 @@ Node* new_node(int data);
 // functions related to Linked List
 void init_list(LinkedList **list);
 void append(LinkedList **list, int data);
+void print(LinkedList **list);
+void print_reverse(LinkedList **list);
 
 // Test functions
 void _log(const char *message);
