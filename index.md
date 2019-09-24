@@ -3,6 +3,7 @@
 The most common Data Structures. Very basic implementations and may contain errors. Most Data Structures are implemented in C/C++ or Python. Other language options may be available. Primary focus will be to cover any data structure in as much detail as possible.
 
 ## Table of Contents
+* [Arrays](./content/arrays)
 * [Linked List](./content/linked_list)
 
 ## Raising Issues
