@@ -8,6 +8,9 @@ Array is a Data Structure where data elements reside in a contiguous block of me
 
 This section is for the Array problems in HackerRank.
 
+
+## 01. Array - DS
+
 The first problem is reversing an array. This can be done in many ways.
 
 For `C/C++` based languages it could be as simple as printing the array from the opposite direction. For languages like Python there are built-in methods for reversing the array (or list which we will treat like an array).
